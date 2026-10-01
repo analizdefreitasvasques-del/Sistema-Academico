@@ -5,9 +5,9 @@ const StatusMatriculaEnum = Object.freeze ({
 });
 
 const TitulacaoEnum = Object.freeze ({
-    especialista: 'Especialista', 
-    mestre: 'Mestre',
-    doutor: 'Doutor'
+    especialista: 'ESPECIALISTA', 
+    mestre: 'MESTRE',
+    doutor: 'DOUTOR'
 })
 
 export {StatusMatriculaEnum, TitulacaoEnum };

@@ -42,7 +42,8 @@ async function iniciarSistema() {
                 console.log(`Titulações permitidas: ${Object.values(TitulacaoEnum).join(', ')}`);
                 const titulacao = await rl.question("Titulação: ");
 
-                gestor.cadastrarProfessor(nome, cpf, email, Number(salario), titulacao.toUpperCase());
+                gestor.
+                cadastrarProfessor(nome, cpf, email, Number(salario), titulacao.toUpperCase());
                 break;
             }
             case '3': {

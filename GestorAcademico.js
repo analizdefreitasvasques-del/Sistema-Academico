@@ -43,12 +43,13 @@ export class GestorAcademico {
         console.log(`CPF: ${pessoaEncontrada.cpf}`);
         console.log(`E-mail: ${pessoaEncontrada.email}`);
         
-        if (pessoaEncontrada instanceof Aluno) {
+        // Verifica se é Aluno conferindo se a propriedade 'curso' existe no objeto
+        if (pessoaEncontrada.curso !== undefined) {
             console.log(`Tipo: Aluno`);
             console.log(`Idade: ${pessoaEncontrada.idade}`);
             console.log(`Curso: ${pessoaEncontrada.curso}`);
             console.log(`Status: ${pessoaEncontrada.status}`);
-        } else if (pessoaEncontrada instanceof Professor) {
+        } else {
             console.log(`Tipo: Professor`);
             console.log(`Salário: R$ ${pessoaEncontrada.salario.toFixed(2)}`);
             console.log(`Titulação: ${pessoaEncontrada.titulacao}`);
@@ -75,6 +76,9 @@ export class GestorAcademico {
                 break;
             case "ERR_SALARIO_BASE":
                 console.log("\n-> AVISO: O salário registrado não pode ser inferior ao piso da categoria (R$ 1500,00).");
+                break;
+            case "ERR_TITULACAO_INVALIDA":
+                console.log("\n-> AVISO: A titulação do professor deve ser exatamente ESPECIALISTA, MESTRE ou DOUTOR.");
                 break;
             default:
                 console.log("\n-> AVISO SISTÊMICO: Falha no processamento dos dados. Tente novamente.");

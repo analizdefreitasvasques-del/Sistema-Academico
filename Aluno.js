@@ -32,7 +32,15 @@ export class Aluno extends PessoaBase {
         return this.#curso;
     }
 
+    
     get status() {
         return this.#status;
+    }
+
+    set status(novoStatus) {
+        if (!Object.values(StatusMatriculaEnum).includes(novoStatus)) {
+            throw new Error("Status de matrícula inválido");
+        }
+        this.#status = novoStatus;
     }
 }

@@ -27,10 +27,15 @@ export class Professor extends PessoaBase {
     }
 
     set titulacao(valor) {
-        if (!Object.values(TitulacaoEnum).includes(valor)) {
-            throw new Error("Titulação inválida");
+        // Normaliza para maiúsculas para evitar erros de digitação
+        const titUpper = String(valor).trim().toUpperCase();
+        
+        if (!Object.values(TitulacaoEnum).includes(titUpper)) {
+            const erro = new Error("Titulação inválida");
+            erro.code = "ERR_TITULACAO_INVALIDA";
+            throw erro;
         }
-        this.#titulacao = valor;
+        this.#titulacao = titUpper;
     }
 
     get titulacao() {
