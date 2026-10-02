@@ -11,7 +11,7 @@ export class Aluno extends PessoaBase {
         super(nome, cpf, email);
         this.idade = idade;
         this.#curso = curso;
-        this.#status = StatusMatriculaEnum.ATIVA;
+        this.#status = StatusMatriculaEnum.ativa;
     }
 
     set idade(valor) {
